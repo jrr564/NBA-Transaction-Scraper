@@ -21,10 +21,10 @@ var scrape = function(callback) {
         result.player = a.find('td').eq(1).text();
         result.team = a.find('td').eq(2).text();
         result.transaction = a.find('td').eq(3).text();
-        result.date2 = a.next().find('td').eq(0).text();
-        result.player2 = a.next().find('td').eq(1).text();
-        result.team2 = a.next().find('td').eq(2).text();
-        result.transaction2 = a.next().find('td').eq(3).text();
+        // result.date2 = a.next().find('td').eq(0).text();
+        // result.player2 = a.next().find('td').eq(1).text();
+        // result.team2 = a.next().find('td').eq(2).text();
+        // result.transaction2 = a.next().find('td').eq(3).text();
 
 
           if (result.title !== "" && result.link !== "") {
