@@ -47,7 +47,7 @@ app.set("view engine", "handlebars");
 var router = express.Router();
 
 // Require routes file pass router object
-// require("./config/routes")(router);
+require("./config/routes")(router);
 
 // Have every request go through router middlewar
 app.use(router);
