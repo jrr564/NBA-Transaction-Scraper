@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-// Save a reference to the Schema constructor
+// saves a reference to the Schema constructor
 var Schema = mongoose.Schema;
 
 // creates a new UserSchema object
@@ -17,7 +17,8 @@ var ArticleSchema = new Schema({
   },
   player: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   transaction: {
     type: String,
@@ -27,7 +28,7 @@ var ArticleSchema = new Schema({
     type: Boolean,
     default: false
   },
-  // This only saves one note's ObjectId, ref refers to the Note model
+  // saves note's ObjectId
   note: [{
     type: Schema.Types.ObjectId,
     ref: "Note"
