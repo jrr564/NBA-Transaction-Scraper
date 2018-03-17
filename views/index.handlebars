@@ -1,17 +1,17 @@
 <div class="articles container">
 
-    {{#each articles }}
+  {{#each articles }}
+  <div class="center-block">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">{{title}}</h3>
-      </div>
       <div class="panel-body">
-        <a class="artLink" href={{link}}>{{link}}</a>
-        <button data-id={{_id}} class="btn btn-danger pull-right save-article">Save Article</button>
+        <h1>{{dateoftrans}}</h1>
+        <p>PLAYER: {{player}}</p>
+        <p>TEAM: {{team}}</p>
+        <p>TRANSACTION: {{transaction}}</p>
+        <button data-id={{_id}} class="btn btn-lg btn-outline-secondary pull-right save-article">Save</button>
       </div>
     </div>
-    <br />
-    <br />
-    {{/each}}
+  </div>
+  {{/each}}
 
 </div>

@@ -1,0 +1,39 @@
+body {
+  font-family: 'IBM Plex Serif', serif;
+  background: linear-gradient(to right, 
+  #0f6db5 0%, #0f6db5 50%,#0f6db5 50%,#ca2d36 50%,#ca2d36 100%);
+}
+
+.panel {
+  color: white;
+  font-size: .6cm;
+  margin: 10px;
+  border: solid white 10px;
+  border-radius: 25px;
+  background: #ca2d36;
+  /* background: linear-gradient(to right, 
+  #0c55a2 0%, #0c55a2 50%,#0c55a2 50%,#ca2d36 50%,#ca2d36 100%);
+} */
+}
+
+.btn-lg {
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #0f6db5;
+}
+
+.btn {
+  border: 1px solid black;
+}
+
+.scrape {
+  color: white;
+  background-color: #d4111b;
+  border: none;
+}
+
+
