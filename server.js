@@ -8,6 +8,11 @@ var Note = require("./models/Note.js");
 var Article = require("./models/Article.js");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, {
+  useMongoClient: true
+});
+
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
 // Initialize Express
 var app = express();
