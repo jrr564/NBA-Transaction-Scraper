@@ -9,8 +9,8 @@
                 <p>{{transaction}}</p>
                 <button data-id={{_id}} class="btn btn-lg btn-outline-secondary pull-right removeSaved">Remove from Saved</button>
 
-                <button data-id={{_id}} class="btn btn-lg btn-outline-secondary pull-right saved-buttons" id="addCheckNote" data-toggle="modal" data-target="#noteModal"
-                    data-value="{{this._id}}">View/Add Notes</button>
+                <button data-id={{_id}} class="btn btn-lg btn-outline-secondary pull-right saved-buttons" id="addCheckNote" data-toggle="modal"
+                    data-target="#noteModal" data-value="{{this._id}}">View/Add Notes</button>
             </div>
         </div>
         <br />
@@ -22,11 +22,10 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <!--title including the id of the current article-->
-                        <h4 class="modal-title" id="">
+                        <h4 class="modal-title">
                             <b>Notes:</b>
                         </h4>
-                        <!--where notes will be displayed-->
+                        <!--display for notes-->
                         <div>
                             <ul id="notesBody">
 
@@ -35,9 +34,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-
                             <label for="exampleTextarea">Enter New Note</label>
-                            <!--enter note text-->
+                            <!--enter note -->
                             <textarea class="form-control" id="notestext" rows="3"></textarea>
                         </div>
                         <div>

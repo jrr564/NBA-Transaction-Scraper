@@ -7,21 +7,21 @@ module.exports = {
     scrape(function(data) {
 
       var articlesArr = data;
-      // Make sure each article object has a date and is not saved by default
+      // make sure object has a date and is not saved by default
       for (var i = 0; i < articlesArr.length; i++) {
         articlesArr[i].date = new Date();
         articlesArr[i].saved = false;
         articlesArr[i].note = [];
       }
 
-      //filters the duplicate articles because the article model says the title must be unique
+      //filters the duplicate articles because the article model says the player must be unique
         Article.collection.insertMany(articlesArr, { ordered: false }, function(err, docs) {
           callback(err, docs);
         });
     });
   },
   get: function(query, cb) {
-    //query is currently hardcoded to {saved: true}
+    //query is hardcoded
     Article.find(query)
       .sort({
         _id: -1

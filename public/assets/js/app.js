@@ -5,7 +5,7 @@ $(document).ready(function () {
         $.get("/api/fetch").then(function (data) {
             $(".articles").remove();
             $.get("/").then(function () {
-                bootbox.alert("<h3 class='text-center m-top-80'>" + data.message + "<h3>", function (result) {
+                bootbox.alert("<h2 class='text-center'>" + data.message + "<h2>", function (result) {
                     location.reload()
                 });
             });
@@ -42,10 +42,8 @@ $(document).ready(function () {
     $('.saved-buttons').on('click', function () {
         // transaction id
         var thisId = $(this).attr("data-value");
-
         //attach id to the save button in the modal for use in save post
         $("#saveButton").attr({ "data-value": thisId });
-
         //make an ajax call for the notes attached to this article
         $.get("/notes/" + thisId, function (data) {
             console.log(data);
@@ -53,16 +51,11 @@ $(document).ready(function () {
             $('#noteModalLabel').empty();
             $('#notesBody').empty();
             $('#notestext').val('');
-
-            //delete button for individual note
-
-            //add id of the current NEWS article to modal label
-            $('#noteModalLabel').append(' ' + thisId);
-            //add notes to body of modal, will loop through if multiple notes
+            //add notes to body of modal, loop if more thn one
             for (var i = 0; i < data.note.length; i++) {
-                var button = ' <a href=/deleteNote/' + data.note[i]._id + '><i class="pull-right fa fa-times fa-2x deletex" aria-hidden="true"></i></a>';
+                var button = ' <a href=/deleteNote/' + data.note[i]._id + '><i class="pull-right deletex" aria-hidden="true"></i></a>';
                 $('#notesBody').append('<div class="panel panel-default"><div class="noteText panel-body">' + data.note[i].body + '  ' + button + '</div></div>');
-            }
+            }  
         });
     });
 
@@ -70,13 +63,11 @@ $(document).ready(function () {
     $(".savenote").click(function () {
         // Grab the id associated with the article from the submit button
         var thisId = $(this).attr("data-value");
-
         //  POST request to change the note, using what's entered in the inputs
         $.ajax({
             method: "POST",
             url: "/notes/" + thisId,
             data: {
-
                 body: $("#notestext").val().trim()
             }
         })

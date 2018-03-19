@@ -24,9 +24,8 @@ module.exports = function(router) {
 
   router.get("/api/fetch", function(req, res) {
 
-      // scrapes articles and saves unique ones to database
+      // scrapes transactions and saves unique ones to database
       articlesController.fetch(function(err, docs) {
-          //lets user know if there were new articles or not
           if (!docs || docs.insertedCount === 0) {
               res.json({message: "No new articles today. Check back tomorrow!"});
           }
@@ -50,16 +49,13 @@ module.exports = function(router) {
 
   //for saving or unsaving articles
   router.patch("/api/articles", function(req, res) {
-
       articlesController.update(req.body, function(err, data) {
-          //this gets sent back to app.js and the article is either saved or unsaved
           res.json(data);
       });
   });
 
   //retrieve the notes attached to saved articles to be displayed in the notes modal
   router.get('/notes/:id', function (req, res) {
-      //Query to find the matching id to the passed in it
       Article.findOne({_id: req.params.id})
           .populate("note") //Populate all of the notes associated with it
           .exec(function (error, doc) { //execute the query
@@ -71,17 +67,16 @@ module.exports = function(router) {
           });
   });
 
-  // Add a note to a saved article
+  // add note to a saved article
   router.post('/notes/:id', function (req, res) {
       //create a new note with req.body
       var newNote = new Note(req.body);
       //save newNote to the db
       newNote.save(function (err, doc) {
-          // Log any errors
           if (err) console.log(err);
           //find and update the note
           Article.findOneAndUpdate(
-              {_id: req.params.id}, // find the _id by req.params.id
+              {_id: req.params.id}, // find id by req.params.id
               {$push: {note: doc._id}}, //push to the notes array
               {new: true},
               function(err, newdoc){
