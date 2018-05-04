@@ -1,6 +1,7 @@
 body {
-  font-family: 'IBM Plex Serif', serif;
-  background-color:
+  font-family: 'Titillium Web', sans-serif;
+  background-color: whitesmoke
+  
 }
 
 .panel {
@@ -10,6 +11,9 @@ body {
   margin: 10px;
   text-align: right;
   border-radius: 0px;
+  background-color: white !important
+}
+.article {
   background: url(../image/NBA_Logo.png) no-repeat left;
   background-size: contain;
   background-position: 5% 50%;
@@ -35,14 +39,16 @@ h1 {
   color: white;
   background-color: #d4111b;
   border: none;
-  margin: 20px 
+  margin: 20px;
+  padding: 10px 
 }
 
 
 .logo {
   font-weight: 900 !important;
-  font-size: 28px !important;
+  font-size: 36px !important;
   color: rgb(14,87,162) !important;
+
 }
 
 #saved {
@@ -50,102 +56,6 @@ h1 {
   font-size: 24px !important;
   color:black !important;
   background-color: none !important;
+
 }
 
-.scrapeButton {
-  list-style: none;
-  position: relative;
-  display: inline-block;
-}
-
-@-moz-keyframes rotate {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(-360deg);}
-}
-
-@-webkit-keyframes rotate {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(-360deg);}
-}
-
-@-o-keyframes rotate {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(-360deg);}
-}
-
-@keyframes rotate {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(-360deg);}
-}
-
-.round {	
-  text-decoration: none;		
-  text-align: center;
-  font-size: 25px;		
-  text-shadow: 0 1px 0 rgba(255,255,255,.7);
-  letter-spacing: -.065em;
-  font-family: "Hammersmith One", sans-serif;		
-  -webkit-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  -moz-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  box-shadow: 2px 2px 7px rgba(0,0,0,.2);
-  border-radius: 300px;
-  z-index: 1;
-  border-width: 4px;
-  border-style: solid;
-}
-
-.round:hover {
-  width: 130%;
-  height: 130%;
-  left: -15%;
-  top: -15%;
-  font-size: 33px;
-  padding-top: 38px;
-  -webkit-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
-  -o-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
-  -moz-box-shadow: 5px 5px 10px rgba(0,0,0,.3);
-  box-shadow: 5px 5px 10px rgba(0,0,0,.3);
-  z-index: 2;
-  border-width:  10px;
-  -webkit-transform: rotate(-360deg);
-  -moz-transform: rotate(-360deg);
-  -o-transform: rotate(-360deg);
-  transform: rotate(-360deg);
-}
-
-a.red {
-  background-color: rgba(239,57,50,1);
-  color: rgba(133,32,28,1);
-  border-color: rgba(133,32,28,.2);
-}
-
-a.red:hover {
-  color: rgba(239,57,50,1);
-}
-.round span.round {
-  display: block;
-  opacity: 0;
-  -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-  font-size: 1px;
-  border: none;
-  padding: 40% 20% 0 20%;
-  color: #fff;
-}
-
-.round span:hover {
-  opacity: .85;
-  font-size: 16px;
-  -webkit-text-shadow: 0 1px 1px rgba(0,0,0,.5);
-  -moz-text-shadow: 0 1px 1px rgba(0,0,0,.5);
-  -o-text-shadow: 0 1px 1px rgba(0,0,0,.5);
-  text-shadow: 0 1px 1px rgba(0,0,0,.5);	
-}
-
-.red span {
-  background: rgba(133,32,28,.7);		
-}
